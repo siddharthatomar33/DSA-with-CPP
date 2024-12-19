@@ -6,10 +6,11 @@ int main ()
 {
  char s1[20]="siddhartha";
  char s2[20]="sonam";
- char s3[20];
+ char s3[20]=" is the husband of ";
 
- strcpy(s3,strcat(s1,s2));
- cout<<s2<<endl;
+ strcat(s1,s3);
+ strcat(s1,s2);
+ cout<<s1<<endl;
 
 return 0;
 }
