@@ -17,7 +17,7 @@ int main() {
 	    if(x<=3){
 	        cout<<"BRONZE"<<endl;
 	    }
-	    else if(x>=3 && x<6){
+	    else if(x>3 && x<=6){
 	        cout<<"SILVER"<<endl;
 	    }
 	    else if(x>6){
