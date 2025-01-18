@@ -59,6 +59,13 @@
   "files.associations": {
     "iostream": "cpp",
     "ostream": "cpp",
-    "chrono": "cpp"
+    "chrono": "cpp",
+    "array": "cpp",
+    "functional": "cpp",
+    "ratio": "cpp",
+    "scoped_allocator": "cpp",
+    "tuple": "cpp",
+    "type_traits": "cpp",
+    "utility": "cpp"
   }
 }
