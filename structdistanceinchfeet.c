@@ -3,10 +3,11 @@
 struct distance{
     float inch,feet;
 };
-int main(){
     struct distance d1;
     struct distance d2;
     float add1,add2;
+
+int main(){
     //in inch's
     printf("enter any inch distance:");
     scanf("%f",&d1.inch);
