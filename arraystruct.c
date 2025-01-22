@@ -5,14 +5,21 @@ struct employee{
     int id;
     char name[20];
 };
-struct employee emp[5];
-int main(){
 
-strcpy(emp[0].name,"sam");
-strcpy(emp[1].name,"ram");
-strcpy(emp[2].name,"sid");
-strcpy(emp[3].name,"nara");
-strcpy(emp[4].name,"kri");
+struct employee emp[5];
+
+int main(){
+printf("enter the names of employees");
+//using for loop for inputng names
+for(int i=0;i<5;i++){
+   scanf("%s",emp[i].name);
+}
+// strcpy(emp[0].name,"sam");
+// strcpy(emp[1].name,"ram");
+// strcpy(emp[2].name,"sid");
+// strcpy(emp[3].name,"nara");
+// strcpy(emp[4].name,"kri");
+
 //multi id's of employee input
 for(int i=0;i<5;i++){
     emp[i].id=i+1;
