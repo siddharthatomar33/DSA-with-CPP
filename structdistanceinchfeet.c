@@ -14,6 +14,7 @@ int main(){
     printf("enter any inch distance:");
     scanf("%f",&d2.inch);
     add1=d1.inch+d2.inch;
+
     printf("the total distance is %2f inch\n",add1);
     //in feet's
     printf("enter any feet distance:");
@@ -21,6 +22,7 @@ int main(){
     printf("enter another distance in feet:");
     scanf("%f",&d2.feet);
     add2=d1.feet+d2.feet;
+    
     printf("the total distance is %2f feet\n",add2);
     
     return 0;
