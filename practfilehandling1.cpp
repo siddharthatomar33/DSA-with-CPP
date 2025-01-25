@@ -18,7 +18,7 @@ int main() {
     // Ask the user for content to write into the file
     printf("Enter content to write into the file:\n");
     getchar(); // Clear the buffer
-    fgets(content, sizeof(content), stdin);
+    fgets(content, sizeof(content),stdin);
     fprintf(file, "%s", content);
     fclose(file);
 
