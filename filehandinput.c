@@ -9,6 +9,7 @@ int main(){
     putc(c,fp1);
     fclose(fp1);
     printf("data input\n");
+    
     fp1=fopen("output","r");
     while((c=getchar())!=EOF)
     printf("%c",c);
