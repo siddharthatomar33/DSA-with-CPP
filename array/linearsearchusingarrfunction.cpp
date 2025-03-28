@@ -1,12 +1,13 @@
 #include<iostream>
 using namespace std;
 
-void printarray(int arr[],int size){  
-    for(int i=0;i<size;i++){
-        cout<<arr[i]<<" ";
-    }  
-    cout<<endl;
-}
+// void printarray(int arr[],int size){  
+//     for(int i=0;i<size;i++){
+//         cout<<arr[i]<<" ";
+//     }  
+//     cout<<endl;
+// }
+
 bool linearsearch(int arr[],int size,int target){
     for(int i=0;i<size;i++){
         if(arr[i]==target){
@@ -15,7 +16,7 @@ bool linearsearch(int arr[],int size,int target){
         }
     }
     //not found
-    return 1;
+    return false;
 }
 int main(){
     int arr[5]={2,4,5,6,8};
@@ -23,9 +24,11 @@ int main(){
     int target=10;
 
     bool ans=linearsearch(arr,size,target);
+
     if(ans==1){
         cout<<"target found"<<endl;
-    }else{
+    }
+    else{
         cout<<"target not found"<<endl;
     }
     //function call
