@@ -9,7 +9,7 @@ int ans=-1;
 while(s<=e){
     if(arr[mid]==target){
         ans=mid;
-        e=mid-1;
+        e=mid-1;//search in left for more occurecne
     }
     else if(target>arr[mid]){
         //right
