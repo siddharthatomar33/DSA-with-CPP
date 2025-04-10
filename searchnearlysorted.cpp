@@ -7,18 +7,18 @@ int searchNearlysorted(int arr[],int n,int target){
         if(mid-1>0 && arr[mid-1]==target){ //pehele left may check hoga
             return mid-1;
         }
-        if(arr[mid]==target){
+        if(arr[mid]==target){//firr mid prr check hoga
             return mid;
         }
-        if(arr[mid+1]==target){
+        if(arr[mid+1]==target){//fir right mid + 1 prr chck hoga
             return mid+1;
         }
-        if(target>arr[mid]){
-            s=mid+2;
+        if(target>arr[mid]){ //target agar bada toh right jaege+2
+        s=mid+2;
         }else{
-            e=mid-2;
+            e=mid-2;//target agar chota hai toh left jaega
         }
-    }mid=s+(e-s)/2;
+    }mid=s+(e-s)/2;//update
 }
 return -1;
 
