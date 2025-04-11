@@ -8,7 +8,7 @@ int findmissingele(int arr[],int n){
     int diff=arr[mid]-mid;
       if(diff==1){
         s=mid+1;
-       }
+        }
        else{
         ans=mid;
         e=mid-1;
