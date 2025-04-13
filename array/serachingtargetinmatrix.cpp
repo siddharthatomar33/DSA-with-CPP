@@ -1,5 +1,6 @@
 #include<iostream>
-using namespace std;
+using namespace std;  //using linear search 
+
 
 // void printarray(int arr[2][2],int row,int col){
 //   for(auto i=0;i<row;i++){
