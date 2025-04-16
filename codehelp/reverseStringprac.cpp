@@ -13,7 +13,7 @@ void reverseString(char ch(), int n){
     int i=0;
     int j=n-1;
     while(i<=j){
-        swap(ch[i],ch[j]);
+        swap(ch[i],ch[j]);//swap characters
         i++;
         j--;
     }
@@ -27,6 +27,7 @@ int main(){
     int len=findLength(ch,100);
 
     reverseString(ch,len);
-    
+
     cout<<"after"<<ch<<endl;
+    return 0;
 }
