@@ -13,9 +13,13 @@ int main(){
     // char* cptr=ch;
     // cout<<cptr<<endl;
 
-    char ch[30]="statement";
-    char * cptr=&ch[0];
+    // char ch[30]="statement";
+    // char * cptr=&ch[0];
     
+    char ch[10]="babber";
+    char* c=ch;
+    char* cptr=c;
+
     cout<<cptr<<endl;
 
     return 0;
