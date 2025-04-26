@@ -3,7 +3,7 @@ using namespace std;
 
 void printarray(int arr[],int n, int i){
     //base case
-    if(i==n){
+    if(index==n){
         //array se bahr aagye hoo
         return;
     }
