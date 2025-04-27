@@ -22,5 +22,5 @@ int main(){
     int n=6;
     int i=0;
     int target=50;
-    cout<<searcharray(arr,n,i,target)<<endl;
+    cout<<searcharray(arr,n,i,target)<<endl ;
 }
