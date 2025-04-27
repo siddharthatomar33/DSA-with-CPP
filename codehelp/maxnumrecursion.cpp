@@ -11,7 +11,8 @@ void maxarray(int arr[], int n,int i, int &maxi){
     }
     //ek case mera
     maxi=max(maxi, arr[i]);//dono may se bada dekhre hai
-    //baki kam recursion   //reursion call
+    //baki kam recursion   
+    //reursion call
     maxarray(arr,n,i+1,maxi);
 }
 int main(){
@@ -21,5 +22,4 @@ int main(){
     int maxi=INT_MIN;
     maxarray(arr,n,i,maxi);
     cout<<"maxno "<<maxi<<endl;
-
 }
