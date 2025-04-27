@@ -9,10 +9,9 @@ void maxarray(int arr[], int n,int i, int &maxi){
         //entire array traverse hua
         return;
     }
-    //reursion call
-    //i case mera
-    maxi=max(maxi, arr[i]);
-    //baki kam recursion
+    //ek case mera
+    maxi=max(maxi, arr[i]);//dono may se bada dekhre hai
+    //baki kam recursion   //reursion call
     maxarray(arr,n,i+1,maxi);
 }
 int main(){
