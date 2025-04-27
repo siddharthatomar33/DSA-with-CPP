@@ -2,9 +2,9 @@
 using namespace std;
 bool searcharray(int arr[], int n, int i,int target){
     //base case
-    //2 base case->found / not found
+    //2 base cases -> found / not found
 
-    //no found
+    //not found
     if(i>=n){
      return false;
     }
