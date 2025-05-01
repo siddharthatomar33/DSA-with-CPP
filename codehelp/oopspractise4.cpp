@@ -10,14 +10,22 @@ class student{
     string name;
     int nos;
 
+private:
+    int *gpa;
+    string gf;
+
+public:
     //ctor: parameterised ctor
-    student(int id, int age,string name,int nos){
+    student(int id, int age,string name,int nos, float gpa,string gf){
         cout<<"student Parameterized ctor called"<<endl;
         this->id=id;
         this->age=age;
         this->name=name;
         this->nos=nos;
+        this->gpa=new int(gpa);
+        this->gf=gf;
     }
+
     //ctor: copy ctor
     //& by reference srcobj=>A
     student(const student &srcobj){ 
@@ -42,32 +50,18 @@ class student{
     ~student(){
         cout<<"student default Dtor called"<<endl;
     }
+
+private:
+void gfchatting(){
+    cout<<this->name<<"chatting with gf"<<endl;
+}    
 };
 int main(){
+student A(1,12,"siddhartha",5,7.8,"sonam");
+cout<<A.age<<endl;
+cout<<A.gf<<endl;
 
-    // student A;
-    // A.id=1;
-    // A.age=15;
-    // A.name="siddhartha ";
-    // A.nos=6;
-
-    // A.study();
-
-    // student B;
-    // A.id=2;
-    // A.age=17;
-    // A.name="sonam ";
-    // A.nos=5;
-
-    // A.sleep();
-
-    // student B(2,10,"sonam ",5);
-    
-    // cout<<A.name<<" "<<A.age<<endl;
-    // cout<<B.name<<" "<<B.age<<endl;
-    // A.bunk();
-    // B.sleep();
-    
+A.gfchatting();
 //_________________________________________________________
 //stack
     // student A(1,15,"siddhartha ",4);
@@ -75,11 +69,11 @@ int main(){
     // student C=A;
     // cout<<C.name<<" "<<A.name<<endl;
 //_________________________________________________________
-//Dynamic alloacation
-student *A=new student(1,14,"siddhartha ",7);
-cout<<A->name<<endl;
-cout<<A->age<<endl;
-A->study();
-delete A;
+ //Dynamic alloacation
+// student *A=new student(1,14,"siddhartha ",7);
+// cout<<A->name<<endl;
+// cout<<A->age<<endl;
+// A->study();
+// delete A;
     return 0;
 }
