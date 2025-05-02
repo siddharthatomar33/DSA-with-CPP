@@ -1,7 +1,7 @@
 #include<iostream>
 #include<string>
 using namespace std;
-//_____________________encapsulation________________________
+//_____________________encapsulation(hiding)________________________
 class student{
 private:
     //attributes
