@@ -16,6 +16,4 @@ class Solution {
             return true;
         }
     };
-    int main(){
-        
-    }
+    
