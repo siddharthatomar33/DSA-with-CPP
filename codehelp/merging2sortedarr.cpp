@@ -9,7 +9,7 @@ void mergesortedarrays(int arr[],int sizearr,int brr[],int sizebrr,vector <int>&
     while(i<sizearr && j<sizebrr){
         if(arr[i]<brr[j]){
             ans.push_back(arr[i]);
-            i++;
+            i++;  
         }
         else{
             ans.push_back(brr[j]);
