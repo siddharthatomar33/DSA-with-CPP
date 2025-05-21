@@ -16,12 +16,12 @@ void merge(int arr[],int s,int e,int mid){
     //original array ka starting index
     int index=s;
     //copying into left array
-    index=mid+1;
     for(int i=0;i<leftlength;i++){
         leftarr[i]=arr[index];
         index++;
     }
     //copying into right array
+    index=mid+1;
     for(int i=0;i<rightlength;i++){
         rightarr[i]=arr[index];
         index++;
@@ -39,8 +39,8 @@ void merge(int arr[],int s,int e,int mid){
         }
         else{
             arr[mainarrayindex]=rightarr[rightlength];
-            rightindex;
-            mainarrayindex;
+            rightindex++;
+            mainarrayindex++;
         }
     }
     //2 cases
@@ -55,6 +55,9 @@ void merge(int arr[],int s,int e,int mid){
         mainarrayindex++;
     }
 
+    //delete heap memory
+    delete[]leftarr;
+    delete[]rightarr;
 }
 
 void mergesort(int arr[],int s,int e){
@@ -70,7 +73,6 @@ void mergesort(int arr[],int s,int e){
    //dono ko merge krna hoga 
    merge(arr,s,e,mid);
 }
-
 
 
 int main(){
