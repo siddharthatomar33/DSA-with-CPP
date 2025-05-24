@@ -13,6 +13,19 @@ class node{
     }
 };
 
+node* insertathead(int value){
+if(head==NULL && tail==NULL){
+    node* newnode= new node(value);
+    head=new node;
+    tail=new node;
+}
+else{
+    node* newnode=new node(value);
+    new node->next=head;
+    head=newnode;
+}
+}
+
 
 int main(){
     //stack
