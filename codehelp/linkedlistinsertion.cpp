@@ -15,13 +15,20 @@ class node{
 
 node* insertathead(int value){
 if(head==NULL && tail==NULL){
+    //creation of new node
     node* newnode= new node(value);
     head=new node;
     tail=new node;
 }
 else{
+    //LL is not empty
+    //pehele se node present hai
+    //insert at head
+    //strp1: create node
     node* newnode=new node(value);
+    //step2- connect this newnode to head node from next
     new node->next=head;
+    //step 3- head update krdo
     head=newnode;
 }
 }
