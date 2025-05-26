@@ -42,7 +42,7 @@ void print(node* head){
 
     while(temp!=NULL){
         cout<<temp->data<<" ";//print data inside node
-        temp=temp->next;//iteration
+        temp=temp->next;//iterating like i++
     }
     cout<<endl;
 }
