@@ -1,3 +1,4 @@
+
 #include<iostream>
 using namespace std;
 //_________________________creating a node________________________
@@ -12,6 +13,31 @@ class node{
         this->next=NULL;
     }
 };
+
+node* insertathead(int value,node* &head,node* &tail){
+if(head==NULL && tail==NULL){
+    //creation of new node
+    node* newnode= new node(value);
+    //uski node ko head maan lia
+    head=newnode;
+    //ussi node ko tail maan lia
+    tail=newnode;
+}
+else{
+    //LL is not empty
+    //pehele se node present hai
+    //insert at head
+
+    //strp1: create node
+    node* newnode=new node(value);
+    //step2- connect this newnode to head node from next
+    newnode->next=head;
+    //step 3- head update krdo
+    head=newnode;
+
+}
+return head; //return updated mode
+}
 
 node* insertattail(int value,node* &head,node* &tail){
 if(head==NULL && tail==NULL){
@@ -37,15 +63,28 @@ else{
 }
 return head; //return updated mode
 }
+
 void print(node* head){
     node* temp=head;
 
     while(temp!=NULL){
         cout<<temp->data<<" ";//print data inside node
-        temp=temp->next;//iterating like i++
+        temp=temp->next;//iteration
     }
-    cout<<endl;
+    cout<<"NULL"<<endl;
 }
+
+int getlength(node* head){
+    int len=0;
+    node* temp=head;
+
+    while(temp!=NULL){
+        temp=temp->next;  //iterate in nodes
+        len++;
+    }
+    return len;
+}
+
 
 int main(){
     
@@ -53,11 +92,11 @@ int main(){
     node* tail=NULL;
     //linklist empty
     //insert node at the head
-    head=insertattail(10,head,tail);
+    head=insertathead(10,head,tail);
     print(head);
-    head=insertattail(20,head,tail);
+    head=insertathead(20,head,tail);
     print(head);
-    head=insertattail(30,head,tail);
+    head=insertathead(30,head,tail);
     print(head);
     
     return 0;
