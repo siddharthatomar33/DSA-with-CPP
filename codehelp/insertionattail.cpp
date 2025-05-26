@@ -29,10 +29,10 @@ else{
 
     //strp1: create new node
     node* newnode=new node(value);
-    //step2- connect this newnode to head node from next
-    newnode->next=head;
-    //step 3- head update krdo
-    head=newnode;
+    //step2- connect this newnode to tail node.
+    tail->next=newnode;
+    //step 3- tail update krdo
+    tail=newnode;
 
 }
 return head; //return updated mode
