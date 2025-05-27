@@ -36,7 +36,7 @@ else{
     head=newnode;
 
 }
-return head; //return updated mode
+return head; //return updated node
 }
 
 node* insertattail(int value,node* &head,node* &tail){
@@ -59,11 +59,10 @@ else{
     tail->next=newnode;
     //step 3- tail update krdo
     tail=newnode;
-
 }
 return head; //return updated mode
 }
-
+//PRINTING
 void print(node* head){
     node* temp=head;
 
@@ -73,8 +72,8 @@ void print(node* head){
     }
     cout<<"NULL"<<endl;
 }
-
-int getlength(node* head){
+//LENGTH OF THE LINKED LIST
+int getlength(node* head){ 
     int len=0;
     node* temp=head;
 
@@ -85,20 +84,62 @@ int getlength(node* head){
     return len;
 }
 
+void insertatposition(int position,int value,node* head,node* tail){
+    int length=getlength(head);
+    if(position==1){
+        //insert at head krna chahta hu
+        insertathead(value,head,tail);
+    }
+    else if(position==length+1){
+        //insert at tail
+        insertattail(value,head,tail);
+    }
+    else{
+        //pehele head ko temp prr dalo
+        node* temp=head;
+        //aab temp ko aage chalao,jaha tkk need hai(position-2)
+        for(int i=0;i<position-2;i++){
+            temp=temp->next;
+        }
+        node* newnode=new node(value);
+        newnode->next=temp->next;
+        temp->next=newnode;
+    }
+}
+
+//SERACHING IN LL
+int searchll(int target,node* head){
+    node* temp=head;
+    int position=0;
+
+    while(temp!=NULL){
+        if(temp->data == target){
+            return position;
+        }
+        temp=temp->next;
+        position++;
+    }
+    return -1;
+}
 
 int main(){
     
     node* head=NULL;
     node* tail=NULL;
     //linklist empty
+
     //insert node at the head
     head=insertathead(10,head,tail);
-    print(head);
+    //print(head);
     head=insertathead(20,head,tail);
-    print(head);
+    //print(head);
     head=insertathead(30,head,tail);
     print(head);
-    
+    insertatposition(2,50,head,tail);
+    print(head);
+    cout<<searchll(20,head);
+
+
     return 0;
     //stack
     //node first;
