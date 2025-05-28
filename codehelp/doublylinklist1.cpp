@@ -58,12 +58,14 @@ else{
     node* newnode=new node(value);
     //step2:
     tail->next=newnode;
-    //step 3: tail update krdo
-    
+    //step 3:
+    newnode->prev=tail;
+    //step 4: update tail
     tail=newnode;
 }
 return head; //return updated mode
 }
+
 //PRINTING
 void print(node* head){
     node* temp=head;
@@ -74,6 +76,7 @@ void print(node* head){
     }
     cout<<"NULL"<<endl;
 }
+
 //LENGTH OF THE LINKED LIST
 int getlength(node* head){ 
     int len=0;
@@ -133,11 +136,13 @@ int main(){
     //linklist empty
 
     //insert node at the head
-    head=insertathead(10,head,tail);
+    insertathead(10,head,tail);
     print(head);
-    head=insertathead(20,head,tail);
+    insertathead(20,head,tail);
     print(head);
-    head=insertathead(30,head,tail);
+    insertathead(30,head,tail);
+    print(head);
+    insertattail(50,head,tail);
     print(head);
     // insertatposition(2,50,head,tail);
     // print(head);
