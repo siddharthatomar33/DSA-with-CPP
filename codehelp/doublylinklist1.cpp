@@ -15,7 +15,7 @@ class node{
         this->prev=NULL;
     }
 };
-
+//insert at head
 node* insertathead(int value,node* &head,node* &tail){
 if(head==NULL && tail==NULL){
     //2case-> //empty/not empty
@@ -41,7 +41,7 @@ else{
 }
 return head; //return updated node
 }
-
+//inside
 node* insertattail(int value,node* &head,node* &tail){
 if(head==NULL && tail==NULL){
     //creation of new node
@@ -134,8 +134,6 @@ int searchll(int target,node* head){
     }
     return -1;
 }
-
-
 
 int main(){
     
