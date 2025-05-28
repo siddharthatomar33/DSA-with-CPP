@@ -6,16 +6,20 @@ class node{
     public:
     int data;
     node* next;
+    node* prev;
 
     //constructor
     node(int value){
         this->data=value;
         this->next=NULL;
+        this->prev=NULL;
     }
 };
 
 node* insertathead(int value,node* &head,node* &tail){
 if(head==NULL && tail==NULL){
+    //2case-> //empty/not empty
+
     //creation of new node
     node* newnode= new node(value);
     //uski node ko head maan lia
@@ -24,15 +28,14 @@ if(head==NULL && tail==NULL){
     tail=newnode;
 }
 else{
-    //LL is not empty
-    //pehele se node present hai
-    //insert at head
-
+    //empty nhi h
     //strp1: create node
     node* newnode=new node(value);
-    //step2- connect this newnode to head node from next
+    //step2- connect newnode ka next to head
     newnode->next=head;
-    //step 3- head update krdo
+    //step 3: connect head ka prev with newnode
+    head->prev=newnode;
+    //step 4- head update krdo
     head=newnode;
 
 }
@@ -50,14 +53,13 @@ if(head==NULL && tail==NULL){
 }
 else{
     //LL is not empty
-    //pehele se node present hai
-    //insert at head
 
-    //strp1: create new node
+    //step1: create new node
     node* newnode=new node(value);
-    //step2- connect this newnode to tail node.
+    //step2:
     tail->next=newnode;
-    //step 3- tail update krdo
+    //step 3: tail update krdo
+    
     tail=newnode;
 }
 return head; //return updated mode
@@ -132,14 +134,14 @@ int main(){
 
     //insert node at the head
     head=insertathead(10,head,tail);
-    //print(head);
+    print(head);
     head=insertathead(20,head,tail);
-    //print(head);
+    print(head);
     head=insertathead(30,head,tail);
     print(head);
-    insertatposition(2,50,head,tail);
-    print(head);
-    cout<<searchll(20,head);
+    // insertatposition(2,50,head,tail);
+    // print(head);
+    // cout<<searchll(20,head);
 
 
     return 0;

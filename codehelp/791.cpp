@@ -10,4 +10,4 @@ public:
         sort(s.begin(),s.end(),cmp);
         return s;
     }
-};
+};  
