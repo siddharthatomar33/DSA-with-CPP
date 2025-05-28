@@ -90,7 +90,9 @@ int getlength(node* head){
 }
 
 void insertatposition(int position,int value,node* head,node* tail){
-    int length=getlength(head);
+
+    int length=getlength(head);//length is reqiued below
+
     if(position==1){
         //insert at head krna chahta hu
         insertathead(value,head,tail);
@@ -100,15 +102,21 @@ void insertatposition(int position,int value,node* head,node* tail){
         insertattail(value,head,tail);
     }
     else{
-        //pehele head ko temp prr dalo
+        //step1
         node* temp=head;
-        //aab temp ko aage chalao,jaha tkk need hai(position-2)
+        //step2
         for(int i=0;i<position-2;i++){
             temp=temp->next;
         }
+        //step3
         node* newnode=new node(value);
-        newnode->next=temp->next;
+        //step4
+        node* forward=temp->next;
+        //step5
         temp->next=newnode;
+        newnode->prev=temp;
+        newnode->next=forward;
+        forward->prev=newnode;
     }
 }
 
@@ -116,7 +124,7 @@ void insertatposition(int position,int value,node* head,node* tail){
 int searchll(int target,node* head){
     node* temp=head;
     int position=0;
-
+ 
     while(temp!=NULL){
         if(temp->data == target){
             return position;
@@ -144,6 +152,9 @@ int main(){
     print(head);
     insertattail(50,head,tail);
     print(head);
+    insertatposition(3,100,head,tail);
+    print(head);
+
     // insertatposition(2,50,head,tail);
     // print(head);
     // cout<<searchll(20,head);
