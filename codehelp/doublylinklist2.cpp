@@ -66,7 +66,7 @@ else{
 return head; //return updated mode
 }
 
-//PRINTING
+//PRINTINGing
 void print(node* head){
     node* temp=head;
 
