@@ -1,3 +1,3 @@
-insertatposition(2,50,head,tail);
-    // print(head);
-    // cout<<searchll(20,head);
+s.push(10);
+    // s.push(20);
+    // s.push(30);
