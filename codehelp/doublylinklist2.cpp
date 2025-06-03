@@ -41,7 +41,7 @@ else{
 }
 return head; //return updated node
 }
-//inside this
+//inside 
 node* insertattail(int value,node* &head,node* &tail){
 if(head==NULL && tail==NULL){
     //creation of new node
