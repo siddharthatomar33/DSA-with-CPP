@@ -54,7 +54,8 @@ class Deque{
        if(front==-1 && rear==-1){//empty
         cout<<"underflow"<<endl;
        }
-       else if(front==rear){//single element
+       else if(front==rear){//single element 
+        //shiftrear and front to -1
         arr[front]=-1;
         front=-1;
         rear=-1;
