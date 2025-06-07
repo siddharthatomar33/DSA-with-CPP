@@ -93,7 +93,7 @@ class Deque{
 
 int main(){
     Deque dq(5);
-    
+    //input
     dq.pushfront(10);
     dq.print();
     dq.pushfront(20);
