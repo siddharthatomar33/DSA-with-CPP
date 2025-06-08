@@ -109,16 +109,16 @@ int main(){
     dq.popback();
     dq.print();
 
-    //insertion
-    // dq.push_front(10);
-    // dq.push_front(30);
-    // dq.push_front(50);
-    // dq.push_back(70);
+    insertion
+    dq.push_front(10);
+    dq.push_front(30);
+    dq.push_front(50);
+    dq.push_back(70);
 
-    // //removal
-    // dq.pop_front();
-    // cout<<dq.front()<<endl;
-    // dq.pop_back();
-    // cout<<dq.back()<<endl;
+    //removal
+    dq.pop_front();
+    cout<<dq.front()<<endl;
+    dq.pop_back();
+    cout<<dq.back()<<endl;
     return 0;
 }
