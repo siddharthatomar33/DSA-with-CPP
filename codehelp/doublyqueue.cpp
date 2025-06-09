@@ -3,7 +3,7 @@
 using namespace std;
 
 int main(){
-    //creation
+    //_______________________creation_______________________
     deque<int>dq;
 
     //insertion
@@ -12,7 +12,7 @@ int main(){
     dq.push_front(50);
     dq.push_back(70);
 
-    //removal
+    //_________________________removal_______________________
     dq.pop_front();
     cout<<dq.front()<<endl;
     dq.pop_back();
