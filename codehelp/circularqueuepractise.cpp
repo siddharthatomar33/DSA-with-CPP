@@ -8,5 +8,45 @@
     int n;
     int front;
     int rear;
- }
-  circularqueue(int )
+
+  circularqueue(int size){
+    this->n=size;
+    arr=new int[size];
+    front=-1;
+    rear=-1;
+  }
+
+
+  void push(int val){
+    //4 cases
+    //overflow
+    if((front==-1 && rear==n-1)|| (rear=front-1)){
+       cout<<"overflow"<<endl;
+    }
+    //first element
+    else if(front==-1 && rear==-1){
+        front++;
+        rear++;
+        arr[rear]=val;
+    }
+    //cicular nature
+    else if(rear==n-1 && front!=0){
+        rear=0;
+        arr[rear]=val;
+    }
+    else{
+        //normal case
+        rear++;
+        arr[rear]=val;
+    }
+  }
+  void pop(){
+    //4cases
+    //underflow
+    if(front==-1 && rear==-1){
+        cout<<"underflow"<<endl;
+    }
+    else()
+
+  }
+ };
