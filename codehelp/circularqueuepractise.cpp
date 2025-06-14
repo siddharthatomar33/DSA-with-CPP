@@ -46,7 +46,10 @@
     if(front==-1 && rear==-1){
         cout<<"underflow"<<endl;
     }
-    else()
+    //single element
+    else if(){
+
+    }
 
   }
  };
