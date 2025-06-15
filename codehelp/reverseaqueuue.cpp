@@ -10,5 +10,6 @@ int main(){
     q.push(5);
 
     reversequeue(q);
-    
+
+    //print all element inside
 }
