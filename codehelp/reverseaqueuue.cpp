@@ -3,7 +3,7 @@
 #include<stack>
 using namespace std;
 
-void reservequeue(queue<int>&q){
+void reservequeue(queue<int> &q){
     stack<int>st;
     while(!q.empty()){
     int element=q.front();
@@ -26,9 +26,12 @@ int main(){
     q.push(4);
     q.push(5);
 
-    reversequeue(q);
-
+    reservequeue(q);
     //print all element inside
-    
+    while(!q.empty()){
+        cout<<q.front<<" ";
+        q.pop();
+    }
+    return 0;
 
 }
