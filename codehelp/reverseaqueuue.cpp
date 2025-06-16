@@ -1,6 +1,23 @@
 #include<iostream>
 #include<queue>
+#include<stack>
 using namespace std;
+
+void reservequeue(queue<int>&q){
+    stack<int>st;
+    while(!q.empty()){
+    int element=q.front();
+    q.pop();
+    }
+}
+
+while(!st.empty()){
+    int element=st.top();
+    st.pop();
+    
+    q.push(element);
+}
+
 int main(){
     queue<int>q;
     q.push(1);
@@ -12,4 +29,6 @@ int main(){
     reversequeue(q);
 
     //print all element inside
+    
+
 }
