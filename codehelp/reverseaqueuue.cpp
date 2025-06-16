@@ -11,7 +11,8 @@ void reservequeue(queue<int> &q){
     q.pop();
     }
 }
-
+//stcke ke element reverse hogye
+//queu
 while(!st.empty()){
     int element=st.top();
     st.pop();
