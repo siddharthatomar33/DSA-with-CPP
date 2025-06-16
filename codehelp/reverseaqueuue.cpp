@@ -3,6 +3,7 @@
 #include<stack>
 using namespace std;
 
+//lets put elements of queue on stacks 
 void reservequeue(queue<int> &q){
     stack<int>st;
     while(!q.empty()){
