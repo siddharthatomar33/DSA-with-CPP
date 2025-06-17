@@ -29,6 +29,7 @@ int main(){
     q.push(5);
 
     reservequeue(q);
+    
     //print all element inside
     while(!q.empty()){
         cout<<q.front<<" ";
