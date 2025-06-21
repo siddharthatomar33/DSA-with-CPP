@@ -19,7 +19,7 @@ while(!st.empty()){
     
     q.push(element);
 }
-//main pa
+//main par
 int main(){
     queue<int>q;
     q.push(1);
