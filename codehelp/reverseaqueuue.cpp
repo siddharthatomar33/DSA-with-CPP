@@ -30,7 +30,7 @@ int main(){
 
     reservequeue(q);
     
-    //print all element inside............
+    //print all element inside.........
     while(!q.empty()){
         cout<<q.front<<" ";
         q.pop();
