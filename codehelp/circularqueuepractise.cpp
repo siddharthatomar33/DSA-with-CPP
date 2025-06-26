@@ -52,7 +52,7 @@
     front=-1;
     rear=-1;
     }
-    //circular nature
+    //circular nature...
     else if(front==n-1){
       arr[front]=-1;
       front=0;//placing front to the starting of queue
