@@ -60,7 +60,7 @@
     else{
       //normal case
       arr[front]=-1;
-      front++;//..
+      front++;//...
     }
 
   }
