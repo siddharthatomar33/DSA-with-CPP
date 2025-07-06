@@ -46,7 +46,7 @@
     if(front==-1 && rear==-1){
         cout<<"underflow"<<endl;
     }
-    //single element.....
+    //single element........
     else if(front==rear){
     arr[front]=-1;
     front=-1;
