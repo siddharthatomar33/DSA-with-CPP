@@ -16,7 +16,7 @@ class mystack{
 
     void push(int val){
         if(top==size-1){
-            //stack is already full
+            //stack is already full..
             cout<<"stack overflow"<<endl;
         }
         else{
