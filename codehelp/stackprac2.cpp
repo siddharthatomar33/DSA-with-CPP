@@ -20,7 +20,7 @@ class mystack{
             cout<<"stack overflow"<<endl;
         }
         else{
-            //normal condition.
+            //normal condition..
             top++;
             arr[top]=val;
         }
