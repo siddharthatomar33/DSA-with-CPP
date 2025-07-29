@@ -26,7 +26,7 @@ class mystack{
         }
     }
     void pop(){
-        //stack is empty,cannot pop inthis case.
+        //stack is empty,cannot pop inthis case..
         if(top=-1){
             cout<<"stack underflow"<<endl;
         }else{
