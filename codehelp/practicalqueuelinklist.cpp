@@ -1,66 +1,95 @@
 #include <iostream>
 using namespace std;
 
-// Function to merge two halves
-void merge(int arr[], int left, int mid, int right) {
-    // Sizes of the subarrays
-    int n1 = mid - left + 1;
-    int n2 = right - mid;
+// Node structure
+struct Node {
+    int data;
+    Node* next;
+};
 
-    // Temporary arrays
-    int* L = new int[n1];
-    int* R = new int[n2];
+// Queue class
+class Queue {
+private:
+    Node* front;
+    Node* rear;
 
-    // Copy data to temp arrays
-    for (int i = 0; i < n1; i++)
-        L[i] = arr[left + i];
-    for (int j = 0; j < n2; j++)
-        R[j] = arr[mid + 1 + j];
+public:
+    Queue() {
+        front = rear = nullptr;
+    }
 
-    // Merge the temp arrays
-    int i = 0, j = 0, k = left;
-    while (i < n1 && j < n2) {
-        if (L[i] <= R[j])
-            arr[k++] = L[i++];
+    // Enqueue operation
+    void enqueue(int value) {
+        Node* temp = new Node();
+        temp->data = value;
+        temp->next = nullptr;
+
+        if (rear == nullptr) {
+            front = rear = temp;
+        } else {
+            rear->next = temp;
+            rear = temp;
+        }
+
+        cout << value << " enqueued.\n";
+    }
+
+    // Dequeue operation
+    void dequeue() {
+        if (front == nullptr) {
+            cout << "Queue is empty. Cannot dequeue.\n";
+            return;
+        }
+
+        Node* temp = front;
+        front = front->next;
+
+        // If queue becomes empty
+        if (front == nullptr)
+            rear = nullptr;
+
+        cout << temp->data << " dequeued.\n";
+        delete temp;
+    }
+
+    // Peek front element
+    void peek() {
+        if (front != nullptr)
+            cout << "Front element: " << front->data << endl;
         else
-            arr[k++] = R[j++];
+            cout << "Queue is empty.\n";
     }
 
-    // Copy remaining elements
-    while (i < n1) arr[k++] = L[i++];
-    while (j < n2) arr[k++] = R[j++];
+    // Display queue elements
+    void display() {
+        if (front == nullptr) {
+            cout << "Queue is empty.\n";
+            return;
+        }
 
-    // Free memory
-    delete[] L;
-    delete[] R;
-}
-
-// Function to apply merge sort
-void mergeSort(int arr[], int left, int right) {
-    if (left < right) {
-        int mid = left + (right - left) / 2;
-
-        // Recursively sort halves
-        mergeSort(arr, left, mid);
-        mergeSort(arr, mid + 1, right);
-
-        // Merge sorted halves
-        merge(arr, left, mid, right);
+        Node* temp = front;
+        cout << "Queue elements: ";
+        while (temp != nullptr) {
+            cout << temp->data << " ";
+            temp = temp->next;
+        }
+        cout << endl;
     }
-}
+};
 
-// Main function
+// Main function to test queue
 int main() {
-    int arr[] = {38, 27, 43, 3, 9, 82, 10};
-    int n = sizeof(arr) / sizeof(arr[0]);
+    Queue q;
 
-    cout << "Original Array:\n";
-    for (int i = 0; i < n; i++) cout << arr[i] << " ";
+    q.enqueue(10);
+    q.enqueue(20);
+    q.enqueue(30);
 
-    mergeSort(arr, 0, n - 1);
+    q.display();
 
-    cout << "\nSorted Array using Merge Sort:\n";
-    for (int i = 0; i < n; i++) cout << arr[i] << " ";
+    q.dequeue();
+    q.peek();
+    q.display();
 
     return 0;
 }
