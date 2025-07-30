@@ -1,60 +1,66 @@
-public class MergeSortExample {
+#include <iostream>
+using namespace std;
 
-    // Function to merge two subarrays
-    public static void merge(int[] array, int left, int mid, int right) {
-        // Sizes of subarrays
-        int n1 = mid - left + 1;
-        int n2 = right - mid;
+// Function to merge two halves
+void merge(int arr[], int left, int mid, int right) {
+    // Sizes of the subarrays
+    int n1 = mid - left + 1;
+    int n2 = right - mid;
 
-        // Temporary arrays
-        int[] L = new int[n1];
-        int[] R = new int[n2];
+    // Temporary arrays
+    int* L = new int[n1];
+    int* R = new int[n2];
 
-        // Copy data to temp arrays
-        for (int i = 0; i < n1; ++i)
-            L[i] = array[left + i];
-        for (int j = 0; j < n2; ++j)
-            R[j] = array[mid + 1 + j];
+    // Copy data to temp arrays
+    for (int i = 0; i < n1; i++)
+        L[i] = arr[left + i];
+    for (int j = 0; j < n2; j++)
+        R[j] = arr[mid + 1 + j];
 
-        // Merge temp arrays
-        int i = 0, j = 0;
-        int k = left;
-        while (i < n1 && j < n2) {
-            if (L[i] <= R[j]) {
-                array[k++] = L[i++];
-            } else {
-                array[k++] = R[j++];
-            }
-        }
-
-        // Copy remaining elements
-        while (i < n1) array[k++] = L[i++];
-        while (j < n2) array[k++] = R[j++];
+    // Merge the temp arrays
+    int i = 0, j = 0, k = left;
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j])
+            arr[k++] = L[i++];
+        else
+            arr[k++] = R[j++];
     }
 
-    // Function to apply merge sort
-    public static void mergeSort(int[] array, int left, int right) {
-        if (left < right) {
-            int mid = left + (right - left) / 2;
+    // Copy remaining elements
+    while (i < n1) arr[k++] = L[i++];
+    while (j < n2) arr[k++] = R[j++];
 
-            // Sort first and second halves
-            mergeSort(array, left, mid);
-            mergeSort(array, mid + 1, right);
+    // Free memory
+    delete[] L;
+    delete[] R;
+}
 
-            // Merge the sorted halves
-            merge(array, left, mid, right);
-        }
+// Function to apply merge sort
+void mergeSort(int arr[], int left, int right) {
+    if (left < right) {
+        int mid = left + (right - left) / 2;
+
+        // Recursively sort halves
+        mergeSort(arr, left, mid);
+        mergeSort(arr, mid + 1, right);
+
+        // Merge sorted halves
+        merge(arr, left, mid, right);
     }
+}
 
-    // Main function
-    public static void main(String[] args) {
-        int[] arr = {38, 27, 43, 3, 9, 82, 10};
-        System.out.println("Original Array:");
-        for (int num : arr) System.out.print(num + " ");
+// Main function
+int main() {
+    int arr[] = {38, 27, 43, 3, 9, 82, 10};
+    int n = sizeof(arr) / sizeof(arr[0]);
 
-        mergeSort(arr, 0, arr.length - 1);
+    cout << "Original Array:\n";
+    for (int i = 0; i < n; i++) cout << arr[i] << " ";
 
-        System.out.println("\nSorted Array using Merge Sort:");
-        for (int num : arr) System.out.print(num + " ");
-    }
+    mergeSort(arr, 0, n - 1);
+
+    cout << "\nSorted Array using Merge Sort:\n";
+    for (int i = 0; i < n; i++) cout << arr[i] << " ";
+
+    return 0;
 }
