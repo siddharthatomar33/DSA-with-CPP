@@ -1,13 +1,13 @@
 #include <iostream>
 using namespace std;
 
-// Node structure....
+// Node structure.....
 struct Node {
     int data;
     Node* next;
 };
 
-// Queue class
+// Queue class....
 class Queue {
 private:
     Node* front;
