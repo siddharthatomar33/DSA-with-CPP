@@ -18,7 +18,7 @@ public:
         front = rear = nullptr;
     }
 
-    // Enqueue operation.............
+    // Enqueue operation..............
     void enqueue(int value) {
         Node* temp = new Node();
         temp->data = value;
