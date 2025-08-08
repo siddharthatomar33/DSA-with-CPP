@@ -2,7 +2,7 @@ class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
         int i=1,j=0;
-        //two pointers
+        //two pointers..
         while(i<nums.size()){
             if(nums[i]==nums[j]){
                 i++;
