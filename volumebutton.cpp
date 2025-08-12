@@ -7,7 +7,8 @@ int main() {
 	while(t--){
 	    int x,y;
 	    cin>>x>>y;
-	    
+	    // Calculate the absolute difference between x and y
+			    
 	    if(x>y){
 	        cout<<x-y<<endl;
 	    }
