@@ -9,7 +9,7 @@ string longestPalindrome(string s) {
     bool dp[n][n] = {false};
     int start = 0, maxLength = 1;
 
-    // Every single character is a palindrome...
+    // Every single character is a palindrome....
     for (int i = 0; i < n; i++) {
         dp[i][i] = true;
     }
