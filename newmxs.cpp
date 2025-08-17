@@ -23,7 +23,7 @@ string longestPalindrome(string s) {
         }
     }
 
-    // Check for palindromes longer than 2..........
+    // Check for palindromes longer than 2...........
     for (int len = 3; len <= n; len++) {
         for (int i = 0; i < n - len + 1; i++) {
             int j = i + len - 1;
